@@ -12,7 +12,7 @@ public class Avoid : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.forward, distance))
         {
-            Debug.Log("Hit " + raycastHitSomething);
+            //Debug.Log("Hit " + raycastHitSomething);
 
             rb.AddTorque(0, turnSpeed, 0);
         }
