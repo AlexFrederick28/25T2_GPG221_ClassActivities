@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-    public Rigidbody rb;
-    [SerializeField] protected float speed;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private float speed;
 
     private void FixedUpdate()
     {

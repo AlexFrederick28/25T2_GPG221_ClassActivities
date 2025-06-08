@@ -5,18 +5,18 @@ using UnityEngine.AI;
 public class PathFinder : MonoBehaviour
 {
     [SerializeField] private Transform targetTransform;
-
     [SerializeField] private NavMeshPath path;
-
-    //[SerializeField] private int pathIndex = 0; // turn towards >>
-
-    Vector3[] pathCorners;
-    [SerializeField] private int cornerIndex = 0; // This keeps track of the next corner you want to go to
-
-    [SerializeField] private float distanceToCorner;
+    
+    [SerializeField] private int cornerIndex; // This keeps track of the next corner you want to go to
+    [SerializeField] private float magnitudeToCorner;
+    public Vector3 currentPath;
 
     // Update is called once per frame
     void Update()
+    {
+
+    }
+    void FixedUpdate()
     {
         path = new NavMeshPath();
 
@@ -24,16 +24,23 @@ public class PathFinder : MonoBehaviour
         {
 
         }
-    }
-    void FixedUpdate()
-    {
+
         //distanceToCorner = path.corners[cornerIndex].magnitude;
-       
+
         // See if we are close to the corner
         if (path != null)
         {
-            //distanceToCorner = Vector3.Magnitude(path.corners[cornerIndex]);
-            Debug.Log("Distance to the next point is " + distanceToCorner);
+            currentPath = path.corners[cornerIndex]; // keeps track of the current selected path corner vector
+            
+            magnitudeToCorner = Vector3.Distance(transform.position, currentPath); // shows the distance to the next corner
+            
+            if (cornerIndex > path.corners.Length)
+            {
+                cornerIndex = 0;
+            }
+
+            
+            
         }
         if (cornerIndex > path.corners.Length)
         {

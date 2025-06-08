@@ -118,6 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8378039814231469348}
   - component: {fileID: 2987046272269941425}
+  - component: {fileID: 6425357186548166382}
   m_Layer: 0
   m_Name: Left Feeler
   m_TagString: Untagged
@@ -154,7 +155,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5384101589724753397}
   turnSpeed: 200
-  distance: 2
+  distance: 2.5
+--- !u!114 &6425357186548166382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653650428446133811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dcd865aa6d17f14cbb9dc5c25e5d686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5384101589724753397}
+  speed: 15
+  detectionDistance: 2.5
+  objectDetected: 
 --- !u!1 &1911596560827546422
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +296,9 @@ Transform:
   - {fileID: 2456382696473282046}
   - {fileID: 3865334039767917452}
   - {fileID: 8378039814231469348}
+  - {fileID: 2768878038538772654}
   - {fileID: 3947244506743473345}
+  - {fileID: 8590211445344721353}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4102811102182686202
@@ -367,14 +386,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2935750022154268905}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10dc4d3578634574eb0eb2ce1a839890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5384101589724753397}
   turnSpeed: 200
-  distance: 1.5
+  distance: 2.5
 --- !u!114 &7095705186696173219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5384101589724753397}
   speed: 15
-  detectionDistance: 2
+  detectionDistance: 2.5
   objectDetected: 
 --- !u!1 &4615316456108590237
 GameObject:
@@ -401,6 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3947244506743473345}
   - component: {fileID: 3138007748179757316}
+  - component: {fileID: 360154049125967680}
   m_Layer: 0
   m_Name: Right Feeler
   m_TagString: Untagged
@@ -437,4 +457,182 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5384101589724753397}
   turnSpeed: 200
-  distance: 2
+  distance: 2.5
+--- !u!114 &360154049125967680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4615316456108590237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dcd865aa6d17f14cbb9dc5c25e5d686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5384101589724753397}
+  speed: 15
+  detectionDistance: 2.5
+  objectDetected: 
+--- !u!1 &4914510283977270732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2768878038538772654}
+  - component: {fileID: 3700375357969680938}
+  - component: {fileID: 1583064328883458079}
+  - component: {fileID: 9116697963285572315}
+  m_Layer: 0
+  m_Name: Left Feeler (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2768878038538772654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914510283977270732}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.2164396, z: 0, w: 0.97629607}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9133375380164640603}
+  m_LocalEulerAnglesHint: {x: 0, y: 25, z: 0}
+--- !u!114 &3700375357969680938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914510283977270732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10dc4d3578634574eb0eb2ce1a839890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5384101589724753397}
+  turnSpeed: 200
+  distance: 2.5
+--- !u!114 &1583064328883458079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914510283977270732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dcd865aa6d17f14cbb9dc5c25e5d686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5384101589724753397}
+  speed: 15
+  detectionDistance: 2.5
+  objectDetected: 
+--- !u!114 &9116697963285572315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914510283977270732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705d946529ffa7a4b97ec2cd3bb2cca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5384101589724753397}
+  speed: 10
+  detectionDistance: 1
+  objectDetected: 
+--- !u!1 &6651276551619171644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8590211445344721353}
+  - component: {fileID: 6701632763390642516}
+  - component: {fileID: 1625602553139353057}
+  - component: {fileID: 7088800825865268536}
+  m_Layer: 0
+  m_Name: Right Feeler (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8590211445344721353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651276551619171644}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.21643952, z: 0, w: 0.97629607}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9133375380164640603}
+  m_LocalEulerAnglesHint: {x: 0, y: -25, z: 0}
+--- !u!114 &6701632763390642516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651276551619171644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10dc4d3578634574eb0eb2ce1a839890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5384101589724753397}
+  turnSpeed: 200
+  distance: 2.5
+--- !u!114 &1625602553139353057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651276551619171644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dcd865aa6d17f14cbb9dc5c25e5d686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5384101589724753397}
+  speed: 15
+  detectionDistance: 2.5
+  objectDetected: 
+--- !u!114 &7088800825865268536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651276551619171644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705d946529ffa7a4b97ec2cd3bb2cca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5384101589724753397}
+  speed: 10
+  detectionDistance: 1
+  objectDetected: 
