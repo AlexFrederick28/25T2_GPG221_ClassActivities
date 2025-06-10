@@ -3,8 +3,8 @@ using UnityEngine;
 public class TurnTowards : MonoBehaviour
 {
     [SerializeField] private float turnSpeed = 2;
-    [SerializeField] private Transform targetObject;
-    [SerializeField] private Vector3 targetPosition;
+    [SerializeField] protected Transform targetObject;
+    [SerializeField] protected Vector3 targetPosition;
     [SerializeField] private Rigidbody rb;
 
 
@@ -17,8 +17,6 @@ public class TurnTowards : MonoBehaviour
         {
             // Has a target gameobject
             targetDir = (targetObject.position - transform.position).normalized;
-            float angle = Vector3.SignedAngle(transform.forward, targetDir, transform.up);
-            rb.AddRelativeTorque(0, angle, 0);
         }
         else
         {
@@ -26,9 +24,10 @@ public class TurnTowards : MonoBehaviour
 
             // Just a raw position in the world (for pathfinding points)
             targetDir = (targetPosition - transform.position).normalized;
-            float angle = Vector3.SignedAngle(transform.forward, targetDir, transform.up);
-            rb.AddRelativeTorque(0, angle, 0);
         }
 
+        float angle = Vector3.SignedAngle(transform.forward, targetDir, transform.up) * turnSpeed;
+
+        rb.AddRelativeTorque(0, angle, 0);
     }
 }

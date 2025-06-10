@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private int number = 10;
+    [SerializeField] private int number;
 
     [SerializeField] private bool spawnOnStart = true;
 

@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 7271540165843350723}
   - component: {fileID: 4038534770601437103}
   - component: {fileID: 7095705186696173219}
+  - component: {fileID: 7635038217178867188}
   m_Layer: 0
   m_Name: Red Enemy
   m_TagString: Untagged
@@ -364,7 +365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5384101589724753397}
-  amount: 500
+  amount: 1000
+  perlinNoise: 0
 --- !u!114 &7271540165843350723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +412,22 @@ MonoBehaviour:
   speed: 15
   detectionDistance: 2.5
   objectDetected: 
+--- !u!114 &7635038217178867188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2935750022154268905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460b71571bff7ef45a9007363e0b22fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 2
+  targetObject: {fileID: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
 --- !u!1 &4615316456108590237
 GameObject:
   m_ObjectHideFlags: 0

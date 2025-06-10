@@ -205,7 +205,6 @@ GameObject:
   - component: {fileID: 7270579489281134418}
   - component: {fileID: 338020888380049260}
   - component: {fileID: 6121188774645349457}
-  - component: {fileID: 1768842693145498294}
   - component: {fileID: 5947098978290836025}
   m_Layer: 0
   m_Name: Green Enemy
@@ -281,20 +280,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &1768842693145498294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7217913590108420884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b4c6d17709dab44a04ed4fd668e700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 6121188774645349457}
-  amount: 1000
 --- !u!114 &5947098978290836025
 MonoBehaviour:
   m_ObjectHideFlags: 0

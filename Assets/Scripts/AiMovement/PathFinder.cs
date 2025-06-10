@@ -38,9 +38,6 @@ public class PathFinder : MonoBehaviour
             {
                 cornerIndex = 0;
             }
-
-            
-            
         }
         if (cornerIndex > path.corners.Length)
         {
