@@ -46,9 +46,7 @@ public class PathFinder : MonoBehaviour
         {
             cornerIndex = 0;
         }
-        // if Vector3.Distance from NPC to pathCorners[index] < 1f
-        // 	  increase cornerIndex
-        // 	  set TurnTowards target to pathCorners[index] 
+        
     }
 
     private void OnDrawGizmos()
