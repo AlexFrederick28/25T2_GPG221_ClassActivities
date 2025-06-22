@@ -3,8 +3,8 @@ using UnityEngine;
 public class Avoid : MonoBehaviour
 {
     public Rigidbody rb;
-    public float turnSpeed = 10f;
-    public float distance = 3f;
+    public float turnSpeed;
+    public float distance;
     
     private void FixedUpdate()
     {

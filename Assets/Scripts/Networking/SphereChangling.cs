@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class SphereChangling : NetworkBehaviour
 {
+    public GameObject spherePrefab;
+
     bool big = true;
 
     public override void OnNetworkSpawn()
@@ -28,8 +30,19 @@ public class SphereChangling : NetworkBehaviour
             {
                 Debug.Log("Space key was pressed");
                 RequestToChangeSize_RPC(big);
+
+                TestFunction_RPC();
             }
         }
+    }
+    
+    [Rpc(SendTo.Server, Delivery = RpcDelivery.Reliable, RequireOwnership = true)]
+    public void TestFunction_RPC()
+    {
+        GameObject newO = Instantiate(spherePrefab, Vector3.zero, Quaternion.identity);
+        newO.GetComponent<NetworkObject>().Spawn();
+
+        newO.GetComponent<NetworkObject>().ChangeOwnership(NetworkObjectId); // change the ownership to player to track who scored etc.
     }
 
     // Remote procedure call

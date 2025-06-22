@@ -4,7 +4,7 @@ public class Wander : MonoBehaviour
 {
     public Rigidbody rb;
     [SerializeField] private float amount;
-    [SerializeField] private float perlinNoise;
+    private float perlinNoise;
 
     private void FixedUpdate()
     {

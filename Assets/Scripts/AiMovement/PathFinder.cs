@@ -39,10 +39,6 @@ public class PathFinder : MonoBehaviour
                 cornerIndex = 0;
             }
         }
-        if (cornerIndex > path.corners.Length)
-        {
-            cornerIndex = 0;
-        }
         
     }
 
@@ -50,7 +46,7 @@ public class PathFinder : MonoBehaviour
     {
         Vector3 lastPos = Vector3.zero;
 
-        if (path != null)
+        if (path != null && Application.isPlaying)
         {
             for (var index = 0; index < path.corners.Length; index++)
             {
