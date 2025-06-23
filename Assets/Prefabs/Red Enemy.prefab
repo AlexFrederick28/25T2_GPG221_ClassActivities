@@ -156,6 +156,9 @@ MonoBehaviour:
   rb: {fileID: 5384101589724753397}
   turnSpeed: 200
   distance: 2.5
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &6425357186548166382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +368,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5384101589724753397}
   amount: 1000
-  perlinNoise: 0
 --- !u!114 &7271540165843350723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +397,9 @@ MonoBehaviour:
   rb: {fileID: 5384101589724753397}
   turnSpeed: 200
   distance: 2.5
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &7095705186696173219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +464,9 @@ MonoBehaviour:
   rb: {fileID: 5384101589724753397}
   turnSpeed: 200
   distance: 2.5
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &360154049125967680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +532,9 @@ MonoBehaviour:
   rb: {fileID: 5384101589724753397}
   turnSpeed: 200
   distance: 2.5
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &1583064328883458079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,6 +616,9 @@ MonoBehaviour:
   rb: {fileID: 5384101589724753397}
   turnSpeed: 200
   distance: 2.5
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &1625602553139353057
 MonoBehaviour:
   m_ObjectHideFlags: 0

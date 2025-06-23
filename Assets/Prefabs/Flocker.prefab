@@ -47,8 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6121188774645349457}
-  turnSpeed: 150
+  turnSpeed: 120
   distance: 2
+  mask:
+    serializedVersion: 2
+    m_Bits: 183
 --- !u!114 &2520963728325395915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6121188774645349457}
-  speed: 45
+  speed: 5
   detectionDistance: 2
   objectDetected: 
 --- !u!114 &6586209033612798663
@@ -78,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6121188774645349457}
-  speed: 55
+  speed: 25
   detectionDistance: 1.5
   objectDetected: 
 --- !u!1 &749503888216280980
@@ -346,6 +349,7 @@ GameObject:
   - component: {fileID: 2075937426196987529}
   - component: {fileID: -1456143005012878953}
   - component: {fileID: -1629157381285781092}
+  - component: {fileID: 2579735890101567523}
   m_Layer: 8
   m_Name: Flocker
   m_TagString: Untagged
@@ -430,13 +434,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7217913590108420884}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8beb1a204813176488bfd25222af4469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6121188774645349457}
-  speed: 40
+  speed: 20
 --- !u!114 &4857990650841760857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,15 +490,83 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7217913590108420884}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ffcd36ad0f8550469df6af845fabffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Neighbours: {fileID: 4857990650841760857}
   rb: {fileID: 6121188774645349457}
-  maxNeighbourDistance: 0
-  speed: 2
+  distance: 0
+  maxNeighbourDistance: 10
+  forceMultiplier: 15
+  maxForce: 500
+  forceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2579735890101567523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217913590108420884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10202bd66fd0a642b80064b1752f24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Neighbours: {fileID: 4857990650841760857}
+  rb: {fileID: 6121188774645349457}
+  distance: 0
+  maxNeighbourDistance: 10
+  forceMultiplier: 15
+  maxForce: 500
+  forceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7854321800082946237
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,8 +614,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6121188774645349457}
-  turnSpeed: 150
+  turnSpeed: 120
   distance: 2
+  mask:
+    serializedVersion: 2
+    m_Bits: 183
 --- !u!114 &437877209451291178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6121188774645349457}
-  speed: 45
+  speed: 5
   detectionDistance: 2
   objectDetected: 
 --- !u!114 &4717487234304137982
@@ -573,6 +648,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6121188774645349457}
-  speed: 55
+  speed: 25
   detectionDistance: 1.5
   objectDetected: 
