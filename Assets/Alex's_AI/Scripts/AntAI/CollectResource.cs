@@ -1,10 +1,8 @@
-namespace Anthill.AI
+using UnityEngine;
+using Anthill.AI;
+
+public class CollectResource : AntAIState
 {
 
-    using UnityEngine;
-
-    public class CollectResource : AntAIState
-    {
-
-    }
 }
+

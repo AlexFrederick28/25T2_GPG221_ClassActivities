@@ -1,10 +1,7 @@
-namespace Anthill.AI
+using UnityEngine;
+using Anthill.AI;
+
+public class MoveToResource : AntAIState
 {
 
-    using UnityEngine;
-
-    public class MoveToResource : AntAIState
-    {
-
-    }
 }

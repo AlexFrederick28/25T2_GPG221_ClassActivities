@@ -22,7 +22,7 @@ MonoBehaviour:
       name: AtResource
   actions:
   - name: LookForResource
-    isDefault: 0
+    isDefault: 1
     state: {fileID: 1033155226614680315, guid: 16e4c61284e1d3d46be066b3620ba493, type: 3}
     cost: 0
     position: {x: 431, y: 70}
