@@ -3,9 +3,9 @@ using UnityEngine;
 public class TurnTowards : MonoBehaviour
 {
     [SerializeField] private float turnSpeed = 2;
-    [SerializeField] protected Transform targetObject;
+    public Transform targetObject;
     [SerializeField] protected Vector3 targetPosition;
-    [SerializeField] private Rigidbody rb;
+    public Rigidbody rb;
 
 
     //Update is called once per frame
@@ -20,7 +20,10 @@ public class TurnTowards : MonoBehaviour
         }
         else
         {
-            targetPosition = GetComponent<PathFinder>().currentPath;
+            if (gameObject.GetComponent<PathFinder>() != null)
+            {
+                targetPosition = GetComponent<PathFinder>().currentPath;
+            }
 
             // Just a raw position in the world (for pathfinding points)
             targetDir = (targetPosition - transform.position).normalized;

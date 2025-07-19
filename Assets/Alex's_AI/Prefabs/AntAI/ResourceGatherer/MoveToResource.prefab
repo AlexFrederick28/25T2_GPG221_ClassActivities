@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7363677409218006586}
   - component: {fileID: -5829122850871470625}
+  - component: {fileID: -2603101862774785274}
+  - component: {fileID: 1057703615411462007}
   m_Layer: 0
   m_Name: MoveToResource
   m_TagString: Untagged
@@ -45,6 +47,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb074e3c2bb5d4645bf7277b5b31572b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupResourceDistance: 5
+--- !u!114 &-2603101862774785274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033155226614680315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460b71571bff7ef45a9007363e0b22fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 50
+  targetObject: {fileID: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+--- !u!114 &1057703615411462007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033155226614680315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8beb1a204813176488bfd25222af4469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  speed: 25
 --- !u!1 &9111053631073150515
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: 0, y: 4}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2683634917892211031
@@ -147,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Looking For Resource
+  m_text: Moving To Resource
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

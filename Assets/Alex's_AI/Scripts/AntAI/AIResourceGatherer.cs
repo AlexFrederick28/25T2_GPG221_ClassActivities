@@ -1,5 +1,6 @@
 using UnityEngine;
 using Anthill.AI;
+using Unity.VisualScripting;
 
 public class AIResourceGatherer : AntAIState, ISense, IEnergyUser
 {
@@ -27,13 +28,24 @@ public class AIResourceGatherer : AntAIState, ISense, IEnergyUser
         }
     }
 
+    [Tooltip("How close the AI has to be to the resource")]
+    [SerializeField] private int pickupResourceDistance;
+
     public Transform detectedEnergyTransform;
+    public Collider detectorCollider;
+    public Collider collectorCollider;
 
     public void CollectConditions(AntAIAgent aAgent, AntAICondition aWorldState)
     {
         aWorldState.Set(GatherResource.SeeResource, _seeResource);
         aWorldState.Set(GatherResource.HasResource, _hasResource);
         aWorldState.Set(GatherResource.AtResource, _atResource);
+    }
+
+    private void Update()
+    {
+        FoundResource();
+        AtResource();
     }
 
     public void AddEnergy(int amount)
@@ -51,6 +63,37 @@ public class AIResourceGatherer : AntAIState, ISense, IEnergyUser
         if (other.gameObject.GetComponent<EnergyResource>())
         {
             detectedEnergyTransform = other.transform;
+        }
+    }
+
+    private void FoundResource()
+    {
+        if (detectedEnergyTransform != null)
+        {
+            _seeResource = true;
+
+            detectorCollider.enabled = false;
+        }
+        else
+        {
+            _seeResource = false;
+
+            detectorCollider.enabled = true;
+        }
+    }
+
+    private void AtResource()
+    {
+        if (GetComponentInParent<AIResourceGatherer>().detectedEnergyTransform != null)
+        {
+            if (Vector3.Distance(transform.position, detectedEnergyTransform.position) < pickupResourceDistance)
+            {
+                _atResource = true;
+            }
+            else
+            {
+                _atResource = false;
+            }
         }
     }
 }
