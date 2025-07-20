@@ -6,13 +6,7 @@ public class EnergyResource : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<IEnergyUser>() != null)
-        {
-            other.gameObject.GetComponent<IEnergyUser>().AddEnergy(energyAmount);
-
-            Destroy(gameObject);
-        }
-        else if (other.gameObject.GetComponentInParent<IEnergyUser>() != null && other.gameObject.GetComponentInParent<AIResourceGatherer>()._atResource)
+        if (other.gameObject.GetComponentInParent<IEnergyUser>() != null && other.gameObject.GetComponentInParent<AIResourceGatherer>().collectorCollider.enabled)
         {
             other.gameObject.GetComponentInParent<IEnergyUser>().AddEnergy(energyAmount);
 

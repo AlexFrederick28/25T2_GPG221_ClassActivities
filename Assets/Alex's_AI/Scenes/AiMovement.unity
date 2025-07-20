@@ -4125,7 +4125,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6932,7 +6932,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -10365,7 +10365,7 @@ GameObject:
   - component: {fileID: 717167510}
   - component: {fileID: 717167509}
   - component: {fileID: 717167508}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17007,7 +17007,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -19990,7 +19990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243414038232432509, guid: 1a375ed980043614d86880161c397cbc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.77
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2243414038232432509, guid: 1a375ed980043614d86880161c397cbc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20023,6 +20023,14 @@ PrefabInstance:
     - target: {fileID: 2243414038232432509, guid: 1a375ed980043614d86880161c397cbc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102749550812209177, guid: 1a375ed980043614d86880161c397cbc, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785578741448063350, guid: 1a375ed980043614d86880161c397cbc, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20814,7 +20822,7 @@ Transform:
   m_GameObject: {fileID: 1642666184}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: -6.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23292,7 +23300,7 @@ GameObject:
   - component: {fileID: 1896738471}
   - component: {fileID: 1896738473}
   - component: {fileID: 1896738474}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnergyBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23365,7 +23373,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

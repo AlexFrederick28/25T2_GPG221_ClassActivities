@@ -1,12 +1,30 @@
 using UnityEngine;
 using Anthill.AI;
 using Unity.VisualScripting;
+using System.Collections;
 
 public class AIResourceGatherer : AntAIState, ISense, IEnergyUser
 {
-    public bool _seeResource;
-    public bool _hasResource;
-    public bool _atResource;
+   
+    public bool _seeResource()
+    {
+        return (detectedEnergyTransform);
+    }
+    public bool _hasResource() // bool doesnt seem necessary, as the AI doesnt need to do anything once it has a resource yet... Energy is the resource anyway
+    {
+        return (false);
+    }
+    public bool _atResource()
+    {
+        if (detectedEnergyTransform != null)
+        {
+            return (Vector3.Distance(transform.position, detectedEnergyTransform.position) < pickupResourceDistance);
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     [SerializeField] private int currentEnergy;
     
@@ -28,24 +46,22 @@ public class AIResourceGatherer : AntAIState, ISense, IEnergyUser
         }
     }
 
+    public enum States { lookForResource, moveToResource, collectResource } // TODO: Get the states to activate the AI functions
+    public States currentState; 
+
     [Tooltip("How close the AI has to be to the resource")]
     [SerializeField] private int pickupResourceDistance;
 
     public Transform detectedEnergyTransform;
     public Collider detectorCollider;
     public Collider collectorCollider;
+    public Light collectionLight;
 
     public void CollectConditions(AntAIAgent aAgent, AntAICondition aWorldState)
     {
-        aWorldState.Set(GatherResource.SeeResource, _seeResource);
-        aWorldState.Set(GatherResource.HasResource, _hasResource);
-        aWorldState.Set(GatherResource.AtResource, _atResource);
-    }
-
-    private void Update()
-    {
-        FoundResource();
-        AtResource();
+        aWorldState.Set(GatherResource.SeeResource, _seeResource());
+        aWorldState.Set(GatherResource.HasResource, _hasResource());
+        aWorldState.Set(GatherResource.AtResource, _atResource());
     }
 
     public void AddEnergy(int amount)
@@ -63,37 +79,6 @@ public class AIResourceGatherer : AntAIState, ISense, IEnergyUser
         if (other.gameObject.GetComponent<EnergyResource>())
         {
             detectedEnergyTransform = other.transform;
-        }
-    }
-
-    private void FoundResource()
-    {
-        if (detectedEnergyTransform != null)
-        {
-            _seeResource = true;
-
-            detectorCollider.enabled = false;
-        }
-        else
-        {
-            _seeResource = false;
-
-            detectorCollider.enabled = true;
-        }
-    }
-
-    private void AtResource()
-    {
-        if (GetComponentInParent<AIResourceGatherer>().detectedEnergyTransform != null)
-        {
-            if (Vector3.Distance(transform.position, detectedEnergyTransform.position) < pickupResourceDistance)
-            {
-                _atResource = true;
-            }
-            else
-            {
-                _atResource = false;
-            }
         }
     }
 }

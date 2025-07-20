@@ -21,19 +21,21 @@ public class CollectResource : AntAIState
         base.Exit();
 
         GetComponentInParent<AIResourceGatherer>().collectorCollider.enabled = false;
+        GetComponentInParent<AIResourceGatherer>().collectionLight.enabled = false;
     }
 
     private IEnumerator EnableCollider_C()
     {
-        if (GetComponentInParent<AIResourceGatherer>()._atResource)
+        if (GetComponentInParent<AIResourceGatherer>().detectedEnergyTransform != null)
         {
-            atResource = true;
-        }
-        if (atResource)
-        {
-            yield return new WaitForSeconds(collectingTime);
+            if (GetComponentInParent<AIResourceGatherer>()._atResource())
+            {
+                GetComponentInParent<AIResourceGatherer>().collectionLight.enabled = true;
 
-            GetComponentInParent<AIResourceGatherer>().collectorCollider.enabled = true;
+                yield return new WaitForSeconds(collectingTime);
+
+                GetComponentInParent<AIResourceGatherer>().collectorCollider.enabled = true;
+            }
         }
     }
 
