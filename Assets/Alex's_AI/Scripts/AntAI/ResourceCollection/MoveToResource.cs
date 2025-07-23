@@ -21,7 +21,7 @@ public class MoveToResource : AntAIState
         }
 
         _turnTowards.rb = GetComponentInParent<Rigidbody>();
-        _turnTowards.targetObject = GetComponentInParent<AIResourceGatherer>().detectedEnergyTransform;
+        _turnTowards.targetObject = GetComponentInParent<ResourceDetection>().detectedEnergyTransform;
     }
 
     private void MoveForward()

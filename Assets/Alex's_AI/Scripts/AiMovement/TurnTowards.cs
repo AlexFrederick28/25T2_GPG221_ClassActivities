@@ -11,26 +11,29 @@ public class TurnTowards : MonoBehaviour
     //Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 targetDir;
+        if (rb != null)
+        {
+            Vector3 targetDir;
 
-        if (targetObject)
-        {
-            // Has a target gameobject
-            targetDir = (targetObject.position - transform.position).normalized;
-        }
-        else
-        {
-            if (gameObject.GetComponent<PathFinder>() != null)
+            if (targetObject)
             {
-                targetPosition = GetComponent<PathFinder>().currentPath;
+                // Has a target gameobject
+                targetDir = (targetObject.position - transform.position).normalized;
+            }
+            else
+            {
+                if (gameObject.GetComponent<PathFinder>() != null)
+                {
+                    targetPosition = GetComponent<PathFinder>().currentPath;
+                }
+
+                // Just a raw position in the world (for pathfinding points)
+                targetDir = (targetPosition - transform.position).normalized;
             }
 
-            // Just a raw position in the world (for pathfinding points)
-            targetDir = (targetPosition - transform.position).normalized;
+            float angle = Vector3.SignedAngle(transform.forward, targetDir, transform.up) * turnSpeed;
+
+            rb.AddRelativeTorque(0, angle, 0);
         }
-
-        float angle = Vector3.SignedAngle(transform.forward, targetDir, transform.up) * turnSpeed;
-
-        rb.AddRelativeTorque(0, angle, 0);
     }
 }

@@ -9,7 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2243414038232432509}
-  - component: {fileID: 1993563065945953632}
+  - component: {fileID: 5980379173584992377}
+  - component: {fileID: 2031659445573127634}
+  - component: {fileID: 6847379105268833163}
+  - component: {fileID: 3472318095722080872}
   - component: {fileID: -2674440704875852276}
   - component: {fileID: 3732071676266620501}
   - component: {fileID: 3568235627099172393}
@@ -38,7 +41,7 @@ Transform:
   - {fileID: 6970094182299889018}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1993563065945953632
+--- !u!114 &5980379173584992377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,13 +53,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2267d1129eca1242948e0f6b33edc91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentEnergy: 0
   currentState: 0
+--- !u!114 &2031659445573127634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523185990031771355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857ab3a4a20633b4ba4a06ca32b6d0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentEnergy: 0
+  maxEnergyCap: 200
+--- !u!114 &6847379105268833163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523185990031771355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c8b0d424432274d8d20dbe73240a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectorCollider: {fileID: 7242023658928446900}
+  collectionLight: {fileID: 4020635471350733611}
+--- !u!114 &3472318095722080872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523185990031771355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: befdfbae779c17e42b09289bf0057cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   pickupResourceDistance: 24
   detectedEnergyTransform: {fileID: 0}
   detectorCollider: {fileID: 5744933155652526421}
-  collectorCollider: {fileID: 7242023658928446900}
-  collectionLight: {fileID: 4020635471350733611}
 --- !u!114 &-2674440704875852276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +152,7 @@ BoxCollider:
     m_Bits: 439
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 439
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

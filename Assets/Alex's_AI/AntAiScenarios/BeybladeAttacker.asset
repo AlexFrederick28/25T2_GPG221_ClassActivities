@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f22e7053ea04ed0922308786facc8c, type: 3}
+  m_Name: BeybladeAttacker
+  m_EditorClassIdentifier: 
+  conditions:
+    list:
+    - id: 0
+      name: SeeEnemy
+    - id: 1
+      name: HasEnergy
+    - id: 2
+      name: InAttackPosition
+    - id: 3
+      name: HitEnemy
+    - id: 4
+      name: SeeEnergy
+    - id: 5
+      name: AtEnergy
+    - id: 6
+      name: FullEnergy
+  actions:
+  - name: LookForEnemy
+    isDefault: 1
+    state: {fileID: 4475974297655610470, guid: 986970aa1690cbd44b9697de4e9e5e71, type: 3}
+    cost: 0
+    position: {x: 591, y: 135}
+    pre:
+    - id: 0
+      value: 0
+    - id: 1
+      value: 1
+    post:
+    - id: 0
+      value: 1
+  - name: AttackEnemy
+    isDefault: 0
+    state: {fileID: 6782672599457642896, guid: 29abe1fbe10aceb4d82ae1dc5da5112c, type: 3}
+    cost: 0
+    position: {x: 977, y: 136}
+    pre:
+    - id: 2
+      value: 1
+    - id: 1
+      value: 1
+    post:
+    - id: 3
+      value: 1
+  - name: MoveToAttack
+    isDefault: 0
+    state: {fileID: 2574535366027881823, guid: 3545ee8421399d34992b33d18b3937d3, type: 3}
+    cost: 0
+    position: {x: 783, y: 136}
+    pre:
+    - id: 0
+      value: 1
+    - id: 1
+      value: 1
+    post:
+    - id: 2
+      value: 1
+  - name: LookForEnergy
+    isDefault: 0
+    state: {fileID: 1033155226614680315, guid: 16e4c61284e1d3d46be066b3620ba493, type: 3}
+    cost: 0
+    position: {x: 589, y: 403}
+    pre:
+    - id: 4
+      value: 0
+    - id: 6
+      value: 0
+    post:
+    - id: 4
+      value: 1
+  - name: MoveToEnergy
+    isDefault: 0
+    state: {fileID: 1033155226614680315, guid: 5a557ef33ac95e94790411cc0f46d856, type: 3}
+    cost: 0
+    position: {x: 785, y: 404}
+    pre:
+    - id: 4
+      value: 1
+    post:
+    - id: 5
+      value: 1
+  - name: CollectEnergy
+    isDefault: 0
+    state: {fileID: 1033155226614680315, guid: 45868b701fc17f44d805a383870b68ec, type: 3}
+    cost: 0
+    position: {x: 981, y: 406}
+    pre:
+    - id: 6
+      value: 0
+    - id: 5
+      value: 1
+    post:
+    - id: 1
+      value: 1
+  goals:
+  - name: FindAndAttackEnemy
+    isDefault: 1
+    position: {x: 399, y: 137}
+    conditions:
+    - id: 3
+      value: 1
+  - name: GetEnergy
+    isDefault: 0
+    position: {x: 395, y: 404}
+    conditions:
+    - id: 1
+      value: 1
+  worldStates:
+  - position: {x: 391, y: 637}
+    isAutoUpdate: 1
+    list:
+    - id: 0
+      value: 0
+    - id: 1
+      value: 0
+    - id: 2
+      value: 0
+    - id: 3
+      value: 0
+    - id: 4
+      value: 0
+    - id: 5
+      value: 0
+    - id: 6
+      value: 0

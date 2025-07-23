@@ -14,7 +14,8 @@ public class LookForResource : AntAIState
     {
         base.Enter();
 
-        resourceDetector = GetComponentInParent<AIResourceGatherer>().detectorCollider;
+        //resourceDetector = GetComponentInParent<AIResourceGatherer>().detectorCollider;
+        resourceDetector = GetComponentInParent<ResourceDetection>().detectorCollider;
         resourceDetector.GetComponent<SphereCollider>().radius = detectorDefaultRadius;
     }
 

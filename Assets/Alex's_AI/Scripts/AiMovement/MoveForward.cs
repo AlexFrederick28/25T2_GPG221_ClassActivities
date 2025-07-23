@@ -7,6 +7,9 @@ public class MoveForward : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddRelativeForce(0,0,speed, ForceMode.Acceleration);
+        if (rb != null)
+        {
+            rb.AddRelativeForce(0, 0, speed, ForceMode.Acceleration);
+        }
     }
 }
