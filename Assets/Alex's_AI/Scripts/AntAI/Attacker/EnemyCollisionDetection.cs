@@ -12,6 +12,8 @@ public class EnemyCollisionDetection : MonoBehaviour
                 GetComponentInParent<IEnergyUser>().RemoveEnergy(GetComponentInParent<AIBeylbladeAttacker>().attackEnemyCost);
 
                 Debug.Log("HIT: " + collision.gameObject.name);
+
+                Destroy(collision.gameObject);
             }
         }
     }

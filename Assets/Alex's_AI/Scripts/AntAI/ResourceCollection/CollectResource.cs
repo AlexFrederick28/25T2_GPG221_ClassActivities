@@ -6,12 +6,18 @@ using System.Collections.Generic;
 public class CollectResource : AntAIState
 {
 
+    [SerializeField] private SoundMaker soundMaker;
+
     public float collectingTime;
     private bool atResource = false;
 
     public override void Execute(float aDeltaTime, float aTimeScale)
     {
         base.Execute(aDeltaTime, aTimeScale);
+
+        soundMaker = GetComponent<SoundMaker>();
+        soundMaker.PlayAudio();
+        soundMaker.EmitSoundwave();
 
         StartCoroutine(EnableCollider_C());
     }

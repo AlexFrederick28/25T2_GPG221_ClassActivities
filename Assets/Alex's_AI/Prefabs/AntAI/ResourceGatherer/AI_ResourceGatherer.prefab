@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 1765203518240849098}
   - component: {fileID: 4020635471350733611}
   - component: {fileID: 6905496124535315688}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: CollectionBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6970094182299889018}
   - component: {fileID: 7242023658928446900}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: ResourceCollector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

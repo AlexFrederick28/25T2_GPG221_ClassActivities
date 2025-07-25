@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 2779772801102996637}
   - component: {fileID: 31968176676025075}
   - component: {fileID: 2137499125324795525}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: UFO_Piece (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 8157657783006818125}
   - component: {fileID: 3371918672853051361}
   - component: {fileID: 3249218103585779790}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: UFO_Piece (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3428368936735349461}
   - component: {fileID: 7072800508637755241}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: ResourceCollector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 8490959082189858528}
   - component: {fileID: 9106805765884666741}
   - component: {fileID: 4617656274045821358}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: CollectionBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}

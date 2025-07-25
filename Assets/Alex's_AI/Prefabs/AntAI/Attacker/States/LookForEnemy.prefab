@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3747452423720098085}
   - component: {fileID: 6043309917992619731}
+  - component: {fileID: -5699915250157195505}
   - component: {fileID: -8708099147084354966}
   - component: {fileID: 2917117564436340085}
   m_Layer: 0
@@ -80,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectedTransform: {fileID: 0}
+  canSee: 1
   topVision: {fileID: 5854947689274924956}
   bottomVision: {fileID: 6805524065692181881}
   topVisionDirection: 10
@@ -90,6 +92,21 @@ MonoBehaviour:
   rays: 20
   dirTop: {x: 0, y: 0, z: 0}
   dirBot: {x: 0, y: 0, z: 0}
+  canDetectSound: 1
+  soundListener: {fileID: -5699915250157195505}
+  hearingRadius: 20
+--- !u!114 &-5699915250157195505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475974297655610470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818ec6f093c33f44fb2d377169b3b5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-8708099147084354966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  multiplier: 1000
+  multiplier: 100000
 --- !u!114 &2917117564436340085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 25
+  speed: 10
 --- !u!1 &8132878100767556474
 GameObject:
   m_ObjectHideFlags: 0
