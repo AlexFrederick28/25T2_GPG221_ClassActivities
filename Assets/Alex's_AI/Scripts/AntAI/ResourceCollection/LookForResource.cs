@@ -1,6 +1,9 @@
 using UnityEngine;
 using Anthill.AI;
 
+/// <summary>
+/// AntAIState - Used to look for a resource, widening the detection of this gameobject until it finds it (to the max range).
+/// </summary>
 public class LookForResource : AntAIState
 {
     [SerializeField] private Collider resourceDetector;

@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 2584149796614035460}
   - component: {fileID: 8240361068583125179}
   - component: {fileID: 5743751789447566808}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: AI_BeybladeAttacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

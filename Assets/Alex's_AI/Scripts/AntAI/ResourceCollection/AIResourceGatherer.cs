@@ -3,6 +3,9 @@ using Anthill.AI;
 using Unity.VisualScripting;
 using System.Collections;
 
+/// <summary>
+/// A specfific set of conditions for a primary resource gatherer AI
+/// </summary>
 public class AIResourceGatherer : AntAIState, ISense, IEnergyUser
 {
     public bool _seeResource()

@@ -1,6 +1,9 @@
 using UnityEngine;
 using Anthill.AI;
 
+/// <summary>
+/// AntAIState - used to move to a resource 
+/// </summary>
 public class MoveToResource : AntAIState
 {
     private TurnTowards _turnTowards;

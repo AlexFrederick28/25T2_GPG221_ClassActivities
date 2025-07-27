@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2674440704875852276}
   - component: {fileID: 3732071676266620501}
   - component: {fileID: 3568235627099172393}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: AI_ResourceGatherer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

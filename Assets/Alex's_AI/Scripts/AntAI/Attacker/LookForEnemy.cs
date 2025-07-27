@@ -1,12 +1,17 @@
 using Anthill.AI;
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
+/// <summary>
+/// Modularised except for the hearing (bad code). Allows the attached gameobject to detect enemies using vision as well as sound detection
+/// </summary>
 public class LookForEnemy : AntAIState
 {
     private Wander _wander;
     private MoveForward _moveForward;
+    private Avoid _avoid;
 
     [Space]
     public Transform detectedTransform;
@@ -32,6 +37,7 @@ public class LookForEnemy : AntAIState
     public bool canDetectSound = true;
     [SerializeField] private SoundListener soundListener;
     [SerializeField] private float hearingRadius = 20f;
+    [SerializeField] private LayerMask mask;
 
     public override void Enter()
     {
@@ -39,16 +45,15 @@ public class LookForEnemy : AntAIState
 
         soundListener.HeardSound_Event += OnHeardSound_Event;
 
-        dirTop = Vector3.zero;
-        dirBot = Vector3.zero;
-
         if (_wander == null)
         {
+            _avoid = GetComponent<Avoid>();
             _moveForward = GetComponent<MoveForward>();
             _wander = GetComponent<Wander>();
         }
         if (_wander.rb == null)
         {
+            _avoid.rb = GetComponentInParent<Rigidbody>();
             _moveForward.rb = GetComponentInParent<Rigidbody>();
             _wander.rb = GetComponentInParent<Rigidbody>();
         }
@@ -59,9 +64,6 @@ public class LookForEnemy : AntAIState
         base.Exit();
 
         soundListener.HeardSound_Event -= OnHeardSound_Event;
-
-        dirTop = Vector3.zero;
-        dirBot = Vector3.zero;
     }
 
     public override void Execute(float aDeltaTime, float aTimeScale)
@@ -86,8 +88,9 @@ public class LookForEnemy : AntAIState
 
             for (int i = 0; i < rays; i++)
             {
-                dirTop = Quaternion.Euler(topVisionDirection, currentAngle, 0) * transform.forward;
-                dirBot = Quaternion.Euler(bottomVisionDirection, currentAngle, 0) * transform.forward;
+                dirTop = Quaternion.Euler(topVisionDirection, currentAngle, 0) * transform.localRotation * Vector3.forward;
+                dirBot = Quaternion.Euler(bottomVisionDirection, currentAngle, 0) * transform.localRotation * Vector3.forward;
+
                 Debug.DrawRay(topVision.position, dirTop * visionLength, Color.green);
                 Debug.DrawRay(bottomVision.position, dirBot * visionLength, Color.green);
 
@@ -102,9 +105,6 @@ public class LookForEnemy : AntAIState
                         DetectEnemyTransform(objectHit);
                     }
                 }
-
-                dirTop = Vector3.zero;
-                dirBot = Vector3.zero;
             }
         }
     }
@@ -117,12 +117,11 @@ public class LookForEnemy : AntAIState
 
     private void OnHeardSound_Event()
     {
-        Debug.Log("HEARD");
         if (canDetectSound)
         {
             Collider[] results = new Collider[10];
 
-            Physics.OverlapSphereNonAlloc(transform.position, hearingRadius, results);
+            Physics.OverlapSphereNonAlloc(transform.position, hearingRadius, results, mask);
 
             foreach (Collider result in results)
             {

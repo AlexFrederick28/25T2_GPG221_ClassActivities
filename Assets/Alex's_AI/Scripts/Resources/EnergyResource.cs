@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Allows the collection of energy. The attached gameobject acts as an energy resource
+/// </summary>
 public class EnergyResource : MonoBehaviour
 {
     public int energyAmount;

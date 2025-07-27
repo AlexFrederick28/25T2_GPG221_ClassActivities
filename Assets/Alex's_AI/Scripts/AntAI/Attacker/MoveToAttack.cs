@@ -2,6 +2,9 @@ using Anthill.AI;
 using Tanks;
 using UnityEngine;
 
+/// <summary>
+/// Not moduralised! Specifically only works for "AIBeybladeAttacker.cs" (bad code). Moves this object to the attack position
+/// </summary>
 public class MoveToAttack : AntAIState
 {
     private TurnTowards _turnTowards;

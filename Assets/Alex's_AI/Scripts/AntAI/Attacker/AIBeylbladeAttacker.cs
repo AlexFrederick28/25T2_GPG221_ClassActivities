@@ -2,6 +2,9 @@ using Anthill.AI;
 using TMPro.EditorUtilities;
 using UnityEngine;
 
+/// <summary>
+/// A specific set of conditions for an attacker AI
+/// </summary>
 public class AIBeylbladeAttacker : AntAIState, ISense, IEnergyUser
 {
     public GameObject baseModel;

@@ -2,6 +2,9 @@ using Anthill.AI;
 using Unity.Mathematics;
 using UnityEngine;
 
+/// <summary>
+/// Not moduralised! Specifically only works for the "AIBeybladeAttacker.cs" (bad code). Spins the objects model and sets an object to look at 
+/// </summary>
 public class AttackEnemy : AntAIState
 {
     private MoveForward _moveForward;

@@ -64,10 +64,10 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 16e48e10220a36848bb5f1c4b4134203, type: 3}
   playOneShot: 1
   playLooping: 0
-  emitterRadius: 20
+  emitterRadius: 100
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16384
 --- !u!82 &5865358983296945027
 AudioSource:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

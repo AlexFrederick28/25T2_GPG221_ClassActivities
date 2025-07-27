@@ -3,6 +3,9 @@ using Anthill.AI;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Allows the attached gameobject to collect a resource. Plays audio and emits soundwave 
+/// </summary>
 public class CollectResource : AntAIState
 {
 

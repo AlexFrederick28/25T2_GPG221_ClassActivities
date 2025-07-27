@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Allows the attached gameobject to hear a sound and trigger an event based off of it
+/// </summary>
 public class SoundListener : MonoBehaviour
 {
    

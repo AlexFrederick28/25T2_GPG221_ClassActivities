@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Allows the attached gameobject to have the ability to use energy
+/// </summary>
 public class EnergySupply : MonoBehaviour
 {
     [SerializeField] private int currentEnergy;

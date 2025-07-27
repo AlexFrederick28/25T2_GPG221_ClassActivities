@@ -2,6 +2,9 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is not used.
+/// </summary>
 public class VisionSystem : MonoBehaviour
 {
     public float maxAngle = 100;
